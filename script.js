@@ -2,6 +2,7 @@ const form=document.querySelector("form");
 const movies=document.querySelector("#movies");
 
 function findMovies(textsearch){
+  console.log(textsearch);
     while(movies.firstChild)
     {
         console.log(movies.firstChild);
@@ -32,7 +33,7 @@ function findMovies(textsearch){
 
 form.addEventListener('submit',(e) =>{
     e.preventDefault();
-    const inputText=form.elements[0].ariaValueMax;
+    const inputText=document.getElementById("search").value;
     findMovies(inputText);
     form.elements[0].value="";
 })
